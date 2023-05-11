@@ -4,12 +4,15 @@
   "description": "Discord Bot that integrates ChatGPT using discord.js",
   "main": "index.js",
   "scripts": {
+    "commands": "node deploy-commands.js",
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.11.0"
+    "discord.js": "^14.11.0",
+    "openai": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^8.40.0"
