@@ -20,6 +20,7 @@ async function askGPT(prompt) {
         const completion = await openai.createCompletion({
             model: 'text-davinci-003',
             prompt: prompt,
+            max_tokens: 300,
             // messages: [{ 'role': 'user', 'content': prompt }],
             temperature: 0.6,
         });
