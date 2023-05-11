@@ -1,7 +1,7 @@
 // import { Configuration, OpenAIApi } from "openai";
 const { Configuration, OpenAIApi } = require('openai');
 const { SlashCommandBuilder } = require('discord.js');
-const { openAiKey } = require('../config.json');
+const { openAiKey } = process.env['openAiKey'];
 
 const configuration = new Configuration({
     apiKey: openAiKey,

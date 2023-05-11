@@ -6,7 +6,7 @@ const path = require('node:path');
 
 // requires the necessary discord.js classes
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
-const { token } = require('./config.json');
+const token = process.env['token'];
 
 // creates a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
