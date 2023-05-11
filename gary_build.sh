@@ -2,4 +2,5 @@
 #exit on error
 set -o errexit
 
-npm install && npm run commands
+npm install
+node -v
