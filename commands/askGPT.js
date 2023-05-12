@@ -22,7 +22,7 @@ async function askGPT(prompt) {
             prompt: prompt,
             max_tokens: 2000,
             // messages: [{ 'role': 'user', 'content': prompt }],
-            temperature: 0.6,
+            temperature: 0.4,
         });
 
         console.log(completion.data);
