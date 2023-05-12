@@ -24,16 +24,16 @@ Provides information about the user.
 
 ## Current Development Focus
 
-We are currently working on resolving an issue where responses from ChatGPT are shortened unexpectedly. We aim to fix this issue to ensure accurate and complete responses.
+**FIXED**We are currently working on resolving an issue where responses from ChatGPT are shortened unexpectedly. We aim to fix this issue to ensure accurate and complete responses.
 
 ## To-Do List
 
 - Improve response handling from ChatGPT to avoid unexpected truncation.
-- Implement a usage management system to restrict command usage when the bot is offline.
+- Implement a usage management system to restrict askgpt command usage.
 
-## Command List
+## Potential/Future Features
 
-- **/askGPT (searchTerm):** Takes a question, instruction, or input as an argument and returns a response from ChatGPT.
+<!-- - **/askGPT (searchTerm):** Takes a question, instruction, or input as an argument and returns a response from ChatGPT. -->
 - **/askgpt (chat/completion/image):** Allows users to select the type of ChatGPT model they want to interact with, such as text completion or image embedding.
 - **/gif (searchTerm):** Takes a search term as an argument and returns a random GIF.
 - **/clear:** Clears the Discord chat messages.
