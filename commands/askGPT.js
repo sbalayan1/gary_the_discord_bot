@@ -2,7 +2,7 @@
 const { Configuration, OpenAIApi } = require('openai');
 const { SlashCommandBuilder } = require('discord.js');
 const openAiKey = process.env['openAiKey'];
-const wait = require('node:timers/promises').setTimeout;
+// const wait = require('node:timers/promises').setTimeout;
 
 const configuration = new Configuration({
     apiKey: openAiKey,
@@ -55,14 +55,9 @@ module.exports = {
         const query = interaction.options.getString('query');
         const res = await askGPT(query);
 
-        // what type of response do I get back when sending long prompts? Are there any errors when querying chatGpt. 
+        // what type of response do I get back when sending long prompts? Are there any errors when querying chatGpt.
             // res is coming through fine in the logs
-        // console.log(res);
-
-        // await interaction.deferReply();
-        // await wait(4000);
-        console.log(res);
         await interaction.editReply(`${res}`);
-        // console.timeLog('reply sent');
+
     },
 };
