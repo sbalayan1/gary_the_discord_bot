@@ -26,6 +26,14 @@ Provides information about the user.
 
 **FIXED**We are currently working on resolving an issue where responses from ChatGPT are shortened unexpectedly. We aim to fix this issue to ensure accurate and complete responses.
 
+Currently working to fix an issue with response times. Currently receiving the following response:
+    DiscordAPIError[10062]: Unknown interaction
+    May 16 02:14:47 PM    rawError: { message: 'Unknown interaction', code: 10062 },
+    May 16 02:14:47 PM    code: 10062,
+    May 16 02:14:47 PM    status: 404,
+    May 16 02:14:47 PM    method: 'POST',
+
+
 ## To-Do List
 
 - Improve response handling from ChatGPT to avoid unexpected truncation.

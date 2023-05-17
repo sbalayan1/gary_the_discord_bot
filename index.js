@@ -77,7 +77,6 @@ client.on(Events.InteractionCreate, async interaction => {
 
         if (now < expirationTime) {
             const expiredTimestamp = Math.round(expirationTime / 1000);
-            // console.log(`${interaction.user} tried to make a request too fast.`);
             return interaction.reply({ content: `Please wait, you are on a cooldown for ${command.data.name}. You can use it again after <t:${expiredTimestamp}:R>.`, ephemeral: true });
         }
 
@@ -89,6 +88,9 @@ client.on(Events.InteractionCreate, async interaction => {
     // once we have a command with the necessary properties, call the execute method on the command and pass the interaction obj as the argument.
     try {
         console.log(`A slash command to ${interaction.commandName} was made by ${interaction.user}!`);
+        if (interaction.commandName === 'askgpt') {
+            await interaction.deferReply();
+        }
         await command.execute(interaction);
     } catch (error) {
         console.error(error);

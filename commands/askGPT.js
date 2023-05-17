@@ -25,12 +25,11 @@ async function askGPT(prompt) {
             temperature: 0.4,
         });
 
-        console.log(completion.data);
         return completion.data.choices[0].text;
 
     } catch (error) {
         if (error.response) {
-            console.log(error.response);
+            // console.log(error.response);
             return `Error: ${error.response.status} - ${error.response.data.error.message}`;
         } else {
             return 'An error occured during your request!';
