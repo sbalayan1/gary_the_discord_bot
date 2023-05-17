@@ -53,7 +53,7 @@ module.exports = {
         const query = interaction.options.getString('query');
         const res = await askGPT(query);
         await interaction.deferReply();
-        await wait(4000);
-        await interaction.editReply(`${res}`);
+        // await wait(4000);
+        await interaction.followUp(`${res}`);
     },
 };
