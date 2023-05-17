@@ -26,6 +26,7 @@ async function askGPT(prompt) {
             temperature: 0.4,
         });
 
+        console.log(completion);
         return completion.data.choices[0].text;
 
     } catch (error) {
@@ -53,7 +54,8 @@ module.exports = {
         const query = interaction.options.getString('query');
         const res = await askGPT(query);
         await interaction.deferReply();
-        // await wait(4000);
+        await wait(4000);
+        // console.log(res);
         await interaction.followUp(`${res}`);
     },
 };
