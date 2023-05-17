@@ -24,15 +24,18 @@ Provides information about the user.
 
 ## Current Development Focus
 
-**FIXED**We are currently working on resolving an issue where responses from ChatGPT are shortened unexpectedly. We aim to fix this issue to ensure accurate and complete responses.
+**FIXED** We are currently working on resolving an issue where responses from ChatGPT are shortened unexpectedly. We aim to fix this issue to ensure accurate and complete responses.
 
-Currently working to fix an issue with response times. Currently receiving the following response:
+**FIXED** Currently working to fix an issue with response times. Currently receiving the following response:
+<ul>
     DiscordAPIError[10062]: Unknown interaction
-    May 16 02:14:47 PM    rawError: { message: 'Unknown interaction', code: 10062 },
-    May 16 02:14:47 PM    code: 10062,
-    May 16 02:14:47 PM    status: 404,
-    May 16 02:14:47 PM    method: 'POST',
+    <li>May 16 02:14:47 PM    rawError: { message: 'Unknown interaction', code: 10062 },</li>
+    <li>May 16 02:14:47 PM    code: 10062,</li>
+    <li>May 16 02:14:47 PM    status: 404,</li>
+    <li>May 16 02:14:47 PM    method: 'POST',</li>
+</ul>
 
+**SOLUTION** Discord has a 3 second window to acknowledge a successful interaction. If no response within the 3 seconds, Discord fails the interaction and invalidates the token. used a deferred response to solve. Key here is running the deferred reply method right when the execute fires. this way you don't potentially hit the 3 second mark if the deferred reply gets bogged down by other code.
 
 ## To-Do List
 
