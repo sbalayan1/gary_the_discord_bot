@@ -26,7 +26,7 @@ async function askGPT(prompt) {
             temperature: 0.4,
         });
 
-        console.log(completion.data.choices[0]);
+        // console.log(completion.data.choices[0]);
         return completion.data.choices[0].text;
 
     } catch (error) {
@@ -51,15 +51,18 @@ module.exports = {
         .setRequired(true)
         .setMinLength(10)),
     async execute(interaction) {
+        await interaction.deferReply();
         const query = interaction.options.getString('query');
         const res = await askGPT(query);
 
-        // what type of response do I get back when sending long prompts? Are there any errors when querying chatGpt
-        console.log(res);
+        // what type of response do I get back when sending long prompts? Are there any errors when querying chatGpt. 
+            // res is coming through fine in the logs
+        // console.log(res);
 
         await interaction.deferReply();
         // await wait(4000);
-        // console.log(res);
-        await interaction.followUp(`${query}`);
+        console.log(res);
+        await interaction.editReply(`${res}`);
+        // console.timeLog('reply sent');
     },
 };
