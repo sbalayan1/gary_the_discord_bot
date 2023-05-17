@@ -59,7 +59,7 @@ module.exports = {
             // res is coming through fine in the logs
         // console.log(res);
 
-        await interaction.deferReply();
+        // await interaction.deferReply();
         // await wait(4000);
         console.log(res);
         await interaction.editReply(`${res}`);
