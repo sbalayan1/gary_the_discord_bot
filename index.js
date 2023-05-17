@@ -88,9 +88,6 @@ client.on(Events.InteractionCreate, async interaction => {
     // once we have a command with the necessary properties, call the execute method on the command and pass the interaction obj as the argument.
     try {
         console.log(`A slash command to ${interaction.commandName} was made by ${interaction.user}!`);
-        if (interaction.commandName === 'askgpt') {
-            await interaction.deferReply();
-        }
         await command.execute(interaction);
     } catch (error) {
         console.error(error);

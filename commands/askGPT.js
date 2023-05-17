@@ -2,6 +2,7 @@
 const { Configuration, OpenAIApi } = require('openai');
 const { SlashCommandBuilder } = require('discord.js');
 const openAiKey = process.env['openAiKey'];
+const wait = require('node:timers/promises').setTimeout;
 
 const configuration = new Configuration({
     apiKey: openAiKey,
@@ -51,6 +52,8 @@ module.exports = {
     async execute(interaction) {
         const query = interaction.options.getString('query');
         const res = await askGPT(query);
-        await interaction.reply(`${res}`);
+        await interaction.deferReply();
+        await wait(4000);
+        await interaction.editReply(`${res}`);
     },
 };
