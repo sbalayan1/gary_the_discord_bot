@@ -52,7 +52,11 @@ module.exports = {
         .setMinLength(10)),
     async execute(interaction) {
         const query = interaction.options.getString('query');
-        // const res = await askGPT(query);
+        const res = await askGPT(query);
+
+        // what type of response do I get back when sending long prompts? Are there any errors when querying chatGpt
+        console.log(res);
+
         await interaction.deferReply();
         // await wait(4000);
         // console.log(res);
